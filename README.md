@@ -14,7 +14,8 @@ Zenroom (Zencode and lua) transactions that call the `MerkleRootRegistryZK` smar
 2. `*.zen`: Zencode files, one per "When"
 3. `*.json`: input data for each transaction
 4. `*_out.json`: signed transaction, already sent to the testnet
-5. `*_153`, `*_155`, `*_157`, `*_159`: second run of `verify` and `validate`. `verify` passes again, `validate` is rejected (nullifier already used).
+5. `*_153`, `*_155`, `*_157`, `*_159`: second run of `verify` and `validate`. `verify` passes again, `validate` is rejected (nullifier already used)
+6. `*_160`: `transferOwnership` to a new wallet (to test `acceptOwnership`)
 
 
 ## How to run
