@@ -2,7 +2,6 @@ local ETH = require_once('crypto_ethereum')
 
 local SLZK = {}
 
--- Do I have to remove empty i and o?
 local MERKLEZK_REGISTRY_SIGNATURES = {
    transferOwnership       = { i={'address'}, o={} },
    cancelOwnershipTransfer = { i={}, o={} },
@@ -90,8 +89,6 @@ When("use ethereum transaction to add members ''", function(newmembers)
 	_use_eth_transaction(SLZK.merkle_registry.addMembers, list)
 end)
 
-
--- da completare
 -- When to verify membership
 When("use ethereum transaction to verify membership with merkle tree depth '' and root '' and nullifier '' and message '' and points ''", function(depth, root, nullifier, message, points)
 	local list = {}
@@ -125,8 +122,6 @@ When("use ethereum transaction to validate membership with merkle tree depth '' 
 	end
 	_use_eth_transaction(SLZK.merkle_registry.validateMembership3, BIG.from_decimal(O.to_string(have(depth))),  BIG.from_decimal(O.to_string(have(root))),  BIG.from_decimal(O.to_string(have(nullifier))), list)
 end)
-
-
 
 return SLZK
 
