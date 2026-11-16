@@ -1,0 +1,52 @@
+{
+  "name": "swissledger-anonset",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node scripts/run-node-tests.mjs",
+    "test:client:unit": "node scripts/run-node-tests.mjs --phase=unit",
+    "test:client:proof": "node scripts/run-node-tests.mjs --phase=proof",
+    "generate:build-info": "node scripts/generate-build-info.mjs",
+    "check:build-info": "node scripts/generate-build-info.mjs --check",
+    "test:artifact-compatibility": "node --test test/artifact-compatibility.test.mjs",
+    "check:artifact-compatibility": "node scripts/check-artifact-compatibility.mjs",
+    "reproducible-build": "node scripts/verify-reproducibility.mjs",
+    "check:dependencies": "node scripts/check-dependency-integrity.mjs",
+    "licenses": "node scripts/generate-license-report.mjs",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build && node scripts/check-docs-build.mjs",
+    "docs:preview": "vitepress preview",
+    "anonset": "node clients/anonset/anonset-cli.mjs",
+    "generate-proof": "node clients/anonset/anonset-cli.mjs proof",
+    "verify-proof": "node clients/anonset/anonset-cli.mjs verify",
+    "create-group": "node clients/anonset/anonset-cli.mjs group create",
+    "add-member": "node clients/anonset/anonset-cli.mjs group add-member",
+    "release": "semantic-release"
+  },
+  "dependencies": {
+    "@semaphore-protocol/core": "4.14.3",
+    "@semaphore-protocol/group": "4.14.3",
+    "@semaphore-protocol/identity": "4.14.3",
+    "@semaphore-protocol/proof": "4.14.3",
+    "ethers": "6.17.0"
+  },
+  "overrides": {
+    "snarkjs": "0.7.5",
+    "underscore": "1.13.8",
+    "ws": "8.21.3"
+  },
+  "devDependencies": {
+    "@semantic-release/commit-analyzer": "13.0.1",
+    "@semantic-release/github": "11.0.6",
+    "@semantic-release/release-notes-generator": "14.1.0",
+    "@semaphore-protocol/contracts": "4.14.3",
+    "@zk-kit/lean-imt.sol": "^2.0.1",
+    "forge-std": "github:foundry-rs/forge-std#v1.9.4",
+    "lugano-planb-vite-theme": "https://github.com/LuganoPlanB/vite-theme/releases/download/v0.3.0/lugano-planb-vite-theme.tar.gz",
+    "poseidon-solidity": "^0.0.5",
+    "semantic-release": "25.0.5",
+    "solhint": "5.0.5",
+    "vitepress": "1.6.4"
+  }
+}
